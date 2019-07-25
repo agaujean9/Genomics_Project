@@ -1,4 +1,4 @@
-# Genomics_Project
+## Genomics Project
 
 For this project the objective is to train a classification model that can correctly classify an individual into a specfic ancestral subpopulation using portions of thier genomic data as input. 
 

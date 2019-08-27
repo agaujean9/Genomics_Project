@@ -3,11 +3,11 @@
 For this project the objective is to train a classification model that can correctly classify an individual into a specfic ancestral subpopulation using portions of thier genomic data as input. 
 
 For this project I knew I wanted to work with large scale human genomic data. In recent years companies like 23andMe and Ancestry have been able to offer the public relatively cheap insights into the secrets that an individual's DNA holds. We have seen applications extend far beyond what we thought imaginable just a decade ago, which can be attributed to the improvement in both laboratory sequencing techniques and computational analysis strategies. The steps I will go over in this project are as follows: 
-> Downloading Genomic Data in the form of variant call files 
-> Conducting exploratory data analysis and quality control measures to ensure variant call quality
-> Cleaning and scaling features, which involved identifying and reducing multicollinearlity between variants that arose due to biological processes
-> Reducing dimensionality of our input features, and indentify the most significant biomarkers
-> Training an SVM algorithm on the resulting features with the objective of classifying samples based on their respective geographic subpopulation 
+- Downloading Genomic Data in the form of variant call files 
+- Conducting exploratory data analysis and quality control measures to ensure variant call quality
+- Cleaning and scaling features, which involved identifying and reducing multicollinearlity between variants that arose due to biological processes
+- Reducing dimensionality of our input features, and indentify the most significant biomarkers
+- Training an SVM algorithm on the resulting features with the objective of classifying samples based on their respective geographic subpopulation 
 
 
 __Data Collection__
@@ -26,9 +26,9 @@ __Exploratory Data Analysis__
 
 The next step is to ensure the quality of our data, which I did by using my understanding of biology and NGS data to create a few informative visualizations and calculations. In the file labeled *Genomics_Project_File* I was able to examine three important features of our Variant Call File (.vcf), checking each result against the expected biological norm. 
 
-(1)Variant Loci 
-(2)Variant Depth Coverage
-(3)Ti:Tv 
+> (1)Variant Loci 
+> (2)Variant Depth Coverage
+> (3)Ti:Tv 
 
 The first feature I visualized were the positions, also known as loci, along chromosome 21 that contained single nucleotide variants(SNVs). What this showed was that there were essentially no mutations appearing within the first 5e<sup>6</sup> basepair positions on this chromosome for all individuals across every subpopulation. Meaning all individuals in our file, belonging to 25 different subpopulations, had the same nucleotide sequence as each other AND as our reference genome (Hrf.g38). While this might seem uncommon, a stretch of the genome that is conserved amongst all humans occurs every so often in the genome. It can be interpreted as a region that is structurally protected against mutation via molecular processes like methylation, or a region that codes for functions so essential for development and/or survival that any mutation in this region will fail to persist through multiple generations. After this convserved region of the genome the distribution graph shows a spike of variants occuring arround 15 million basepairs along the chromosome, these mutations are seen evenly distributed with a frequency of approximately .03 bp<sup>-1</sup> for the remaining windows within our 48 million nucleotide sequence. The initial conserved region seen on this graph could also be a result of the acrocentric structure of the chromsome. Studies have proven that the region that codes for the centromere has always been structurally constricted and evolutionarily conserved within eukaryotic cells. The data that is provided by this visualization at the very least does not suggest anything to be amiss with our data. With a similar thought process as the members of the HGP, Chromosome 21's high heterogenity and relatively small number of basepairs make it an ideal candidate to choose for primary evaluation efforts. 
 

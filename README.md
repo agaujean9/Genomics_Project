@@ -38,4 +38,9 @@ Finally, I used two features present in our data table to examine the types of m
 
 __Feature Engineering__
 
-Once the data had been validated the next step was determining how we were going to assemble a set of features that can provide predictive value for the individuals within each subpopulation. Our current dataset had biallelic variant calls at approximately 1 million different locations along the genome, meaning for the entire population sampled there was at least one variant call at 1 million different loci. Now that does not mean that each individual had 1 million different alleles from the human reference genome, in fact of our ~2500 individuals most of the single nucleotide variants called at a specific locus were only present in a small portion of the samples. This resulted in a sparse matrix of features for each sample, with over 1 million rows attached to each sample, but an overwhelming majority of them containing a the expected reference allele for each locus. 
+Once the data had been validated the next step was determining how we were going to assemble a set of features that can provide predictive value for the individuals within each subpopulation. Our current dataset had biallelic variant calls at approximately 1 million different locations along the genome, meaning for the entire population sampled there was at least one variant call at 1 million different loci. Now that does not mean that each individual had 1 million different alleles from the human reference genome, in fact of our ~2500 individuals most of the single nucleotide variants called at a specific locus were only present in a small portion of the samples. This resulted in a sparse matrix of features for each sample, with over 1 million rows attached to each sample, but an overwhelming majority of them containing the expected reference allele at each locus.
+
+
+
+
+
